@@ -11,36 +11,112 @@ body{
     overflow: hidden;
     background: radial-gradient(circle, rgba(38,36,70,1) 0%, rgba(27,26,83,1) 87%);
 }
-.Clock{
-    width: 500px;
-    height: 500px;
-    position: relative;
-    background-color: rgb(58, 0, 83);
-    border-radius: 50%;
-    display: flex;
-    color: rgb(169, 169, 189);
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width:600px){
+    .Clock{
+        width: 350px;
+        height: 350px;
+        position: relative;
+        background-color: rgb(58, 0, 83);
+        border-radius: 50%;
+        display: flex;
+        color: rgb(169, 169, 189);
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .Clock::before{
+    
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        content: "";
+        width: 375px;
+        height: 375px;
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(97deg, rgba(38,27,214,1) 0%, rgba(61,106,194,1) 38%, rgba(150,59,127,1) 73%);
+        z-index: -1;
+    }
+    .Number{
+        transform: rotate(calc(30deg * var(--index)));
+        position: absolute;
+        text-align: center;
+        inset: 20px;
+        font-size: 40px;
+    }
+    .HourNiddle{
+        border-radius: 50px;
+        width: 12px;
+        height: 115px;
+        background: linear-gradient(97deg, rgba(96,79,203,1) 0%, rgba(117,8,131,1) 87%);
+    }
+    .MinuteNiddle{
+        border-radius: 50px;
+        width: 12px;
+        height: 130px;
+        background: linear-gradient(97deg, rgba(96,79,203,1) 0%, rgba(117,8,131,1) 87%);
+    }
+    .SecondNiddle{
+        border-radius: 20px;
+        width: 6px;
+        height: 140px;
+        background: linear-gradient(97deg, rgba(96,79,203,1) 0%, rgba(117,8,131,1) 87%);
+    }
+}
+@media (orientation: landscape){
+    body{
+        overflow: auto;
+    }
+}
+@media screen and (min-width:601px){
+    .Clock{
+        width: 500px;
+        height: 500px;
+        position: relative;
+        background-color: rgb(58, 0, 83);
+        border-radius: 50%;
+        display: flex;
+        color: rgb(169, 169, 189);
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .Clock::before{
+    
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        content: "";
+        width: 525px;
+        height: 525px;
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(97deg, rgba(38,27,214,1) 0%, rgba(61,106,194,1) 38%, rgba(150,59,127,1) 73%);
+        z-index: -1;
+    }
+    .Number{
+        transform: rotate(calc(30deg * var(--index)));
+        position: absolute;
+        text-align: center;
+        inset: 20px;
+        font-size: 40px;
+    }
+    .HourNiddle{
+        border-radius: 50px;
+        width: 12px;
+        height: 130px;
+        background: linear-gradient(97deg, rgba(96,79,203,1) 0%, rgba(117,8,131,1) 87%);
+    }
+    .MinuteNiddle{
+        border-radius: 50px;
+        width: 12px;
+        height: 190px;
+        background: linear-gradient(97deg, rgba(96,79,203,1) 0%, rgba(117,8,131,1) 87%);
+    }
+    .SecondNiddle{
+        border-radius: 20px;
+        width: 6px;
+        height: 210px;
+        background: linear-gradient(97deg, rgba(96,79,203,1) 0%, rgba(117,8,131,1) 87%);
+    }
+}
 
-}
-.Clock::before{
-
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    content: "";
-    width: 525px;
-    height: 525px;
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(97deg, rgba(38,27,214,1) 0%, rgba(61,106,194,1) 38%, rgba(150,59,127,1) 73%);
-    z-index: -1;
-}
-.Number{
-    transform: rotate(calc(30deg * var(--index)));
-    position: absolute;
-    text-align: center;
-    inset: 20px;
-    font-size: 40px;
-}
 .Number b{
     transform: rotate(calc(-30deg * var(--index)));
     display: inline-block;
@@ -61,22 +137,4 @@ body{
     bottom: 50%;
     transform: translate(-50%) rotate(calc(var(--rotate) * 1deg));
     transform-origin: bottom;
-}
-.HourNiddle{
-    border-radius: 50px;
-    width: 12px;
-    height: 130px;
-    background: linear-gradient(97deg, rgba(96,79,203,1) 0%, rgba(117,8,131,1) 87%);
-}
-.MinuteNiddle{
-    border-radius: 50px;
-    width: 12px;
-    height: 190px;
-    background: linear-gradient(97deg, rgba(96,79,203,1) 0%, rgba(117,8,131,1) 87%);
-}
-.SecondNiddle{
-    border-radius: 20px;
-    width: 6px;
-    height: 210px;
-    background: linear-gradient(97deg, rgba(96,79,203,1) 0%, rgba(117,8,131,1) 87%);
 }
